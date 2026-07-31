@@ -8,34 +8,34 @@
   :root { --saffron: #FF9933; --white: #FFFFFF; --green: #138808; --navy: #000080; --red: #B71C1C; }
     * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
   body { background: #f5f5f5; }
-  
-  header { background: linear-gradient(90deg, var(--saffron) 33%, var(--white) 33% 66%, var(--green) 66%); padding: 15px; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
-  header h1 { color: var(--navy); font-size: 20px; }
-  header p { color: var(--red); font-weight: bold; font-size: 12px; }
 
-  .warning-banner { background: var(--red); color: white; text-align: center; padding: 10px; font-weight: bold; font-size: 14px; animation: blink 1.5s infinite; }
+  header { background: linear-gradient(90deg, var(--saffron) 33%, var(--white) 33% 66%, var(--green) 66%); padding: 15px; text-align: center; }
+  header h1 { color: var(--navy); font-size: 20px; }
+  header p { color: var(--navy); font-weight: 600; font-size: 12px; }
+
+.warning-banner { background: var(--red); color: white; text-align: center; padding: 10px; font-weight: bold; font-size: 14px; animation: blink 1.5s infinite; }
   @keyframes blink { 50% { opacity: 0.7; } }
 
-  .container { max-width: 900px; margin: 15px auto; padding: 10px; }
-  .card { background: var(--white); padding: 18px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin-bottom: 15px; border-top: 4px solid var(--saffron); }
-  .card h2 { color: var(--navy); font-size: 16px; margin-bottom: 12px; }
-  
+.container { max-width: 900px; margin: 15px auto; padding: 10px; }
+.card { background: var(--white); padding: 18px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin-bottom: 15px; border-top: 4px solid var(--saffron); }
+.card h2 { color: var(--navy); font-size: 16px; margin-bottom: 12px; }
+
   input, select, textarea, button { width: 100%; padding: 12px; margin: 8px 0; border: 1px solid #ccc; border-radius: 8px; font-size: 14px; }
   button { background: var(--green); color: white; border: none; font-weight: bold; cursor: pointer; }
   button:hover { background: #0f6a06; }
   button.red { background: var(--red); }
   button.blue { background: var(--navy); }
-  
-  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-  .complaint { background: #fff3e0; padding: 12px; border-radius: 8px; margin: 10px 0; border-left: 5px solid var(--red); }
-  .complaint .id { font-weight: bold; color: var(--navy); }
-  .status { float: right; padding: 3px 10px; border-radius: 15px; font-size: 11px; font-weight: bold; background: #ffc107; }
-  .status.solved { background: var(--green); color: white; }
-  .status.jail { background: var(--red); color: white; }
-  
-  .score-board { background: var(--navy); color: white; text-align: center; padding: 12px; border-radius: 10px; }
-  .score-board h3 { font-size: 28px; color: var(--saffron); }
-  .alert { background: #ffebee; border-left: 5px solid var(--red); padding: 10px; margin: 10px 0; font-weight: bold; }
+
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.complaint { background: #fff3e0; padding: 12px; border-radius: 8px; margin: 10px 0; border-left: 5px solid var(--red); }
+.complaint.id { font-weight: bold; color: var(--navy); }
+.status { float: right; padding: 3px 10px; border-radius: 15px; font-size: 11px; font-weight: bold; background: #ffc107; }
+.status.solved { background: var(--green); color: white; }
+.status.jail { background: var(--red); color: white; }
+
+.score-board { background: var(--navy); color: white; text-align: center; padding: 12px; border-radius: 10px; }
+.score-board h3 { font-size: 28px; color: var(--saffron); }
+.alert { background: #ffebee; border-left: 5px solid var(--red); padding: 10px; margin: 10px 0; font-weight: bold; }
   footer { background: var(--navy); color: white; text-align: center; padding: 20px; font-size: 12px; margin-top: 20px; }
 </style>
 </head>
@@ -47,7 +47,7 @@
 </header>
 
 <div class="warning-banner">
-  ⚠️ CHETAVNI: Bhrashtachar = Turant Job se Barkhast + Jail + Sampatti Jabt ⚠️
+  ⚠️ CHETAVNI: Bhrashtachar Sabit Hua = Turant Job se Barkhast + Jail + Sampatti Jabt ⚠️
 </div>
 
 <div class="container">
@@ -80,7 +80,7 @@
       <button class="blue" onclick="voiceReport()">🎤 Voice se Complaint</button>
       <button class="blue" onclick="generateRTI()">📄 1-Click RTI + Legal Notice</button>
       <button onclick="whatsappBot()">📱 WhatsApp: 14448 pe Report</button>
-      <button class="red" onclick="officerAction()">👮 Officer: Job Khatam + Jail</button>
+      <button class="red" onclick="officerAction()">👮 Officer Action: Jail</button>
     </div>
   </div>
 
@@ -132,4 +132,51 @@
     complaints.reverse().forEach(c => {
       complaintList.innerHTML += `
         <div class="complaint">
-          <span class="status ${c.status == 'Solved'? 'solved'
+          <span class="status ${c.status == 'Solved'? 'solved' : ''} ${c.status == 'Jail'? 'jail' : ''}">${c.status}</span>
+          <p class="id">ID: ${c.id} ${c.aiFlag? '🚨' : ''}</p>
+          <p><b>Vibhag:</b> ${c.vibhag} | <b>Location:</b> ${c.location}</p>
+          <p><b>Shikayat:</b> ${c.details}</p>
+          <p><small>Proof Hash: ${c.proofHash} | Date: ${c.date}</small></p>
+        </div>`;
+    });
+  }
+
+  function checkAIRedFlag(){
+    let alertBox = document.getElementById('aiAlertBox'); alertBox.innerHTML = '';
+    let vibhagCount = {};
+    complaints.forEach(c => { vibhagCount[c.vibhag] = (vibhagCount[c.vibhag] || 0) + 1; });
+    for(let v in vibhagCount){
+      if(vibhagCount[v] >= 2){
+        complaints.filter(c=>c.vibhag==v).forEach(c=>c.aiFlag=true);
+        alertBox.innerHTML += `<div class="alert">🚨 AI SHER: "${v}" Vibhag me ${vibhagCount[v]} complaints! CVC + DM ko Auto Report bhej di gayi. Karyawahi 7 din me.</div>`;
+      }
+    }
+    localStorage.setItem('bm_complaints', JSON.stringify(complaints));
+  }
+
+  function updateScore(){
+    let total = complaints.length; let solved = complaints.filter(c=>c.status=='Solved' || c.status=='Jail').length;
+    let score = total > 0? Math.round((solved/total)*100) : 78;
+    document.getElementById('transparencyScore').innerText = score + ' / 100';
+  }
+
+  function trackComplaint(){
+    let found = complaints.find(c => c.id == trackInput.value);
+    trackResult.innerHTML = found? `<b>Status:</b> ${found.status} <br> <b>Karyawahi:</b> ${found.status=='Jail'? 'FIR darj, Job Barkhast' : 'Janch chal rahi hai'}` : `<b style="color:red;">Galat ID</b>`;
+  }
+
+  function voiceReport(){ alert('🎤 FUTURE: Mic on hoga. 60 sec bolo. AI Hindi/Bhojpuri me text banayega.'); }
+  function generateRTI(){ let rti = `RTI Act 2005\nVishay: Complaint ID ${complaints[0]?.id} ki status jankari de.\n30 din me jawab anivarya.`; prompt('RTI Copy karein:', rti); }
+  function whatsappBot(){ alert('📱 FUTURE: WhatsApp 14448\n"Report" likh kar photo bhej do.'); }
+  function officerAction(){
+    if(complaints.length > 0 && complaints[0].status=='Pending'){
+      complaints[0].status = 'Jail';
+      localStorage.setItem('bm_complaints', JSON.stringify(complaints));
+      showComplaints(); updateScore();
+      alert('Karyawahi: Officer Suspended. FIR Darj. Sampatti ki Janch shuru.');
+    } else { alert('Pehle koi Pending complaint honi chahiye'); }
+  }
+
+</script>
+</body>
+</html>
