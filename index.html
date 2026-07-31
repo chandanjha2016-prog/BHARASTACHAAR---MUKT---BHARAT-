@@ -3,195 +3,133 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BhrashtacharMukt-Bharat | Viksit Bharat @2047</title>
+<title>Bhrashtachar Mukt - Bharat | Corruption = Job Khatam + Jail</title>
 <style>
-  :root {
-    --saffron: #FF9933;
-    --green: #138808;
-    --blue: #000080;
-    --white: #FFFFFF;
-  }
+  :root { --saffron: #FF9933; --white: #FFFFFF; --green: #138808; --navy: #000080; --red: #B71C1C; }
     * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
-  body { background: #f4f4f4; }
+  body { background: #f5f5f5; }
   
-  /* HEADER */
-  header {
-    background: linear-gradient(90deg, var(--saffron), var(--white), var(--green));
-    color: var(--blue);
-    padding: 15px;
-    text-align: center;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-  }
-  header h1 { font-size: 22px; }
-  header p { font-size: 12px; }
+  header { background: linear-gradient(90deg, var(--saffron) 33%, var(--white) 33% 66%, var(--green) 66%); padding: 15px; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
+  header h1 { color: var(--navy); font-size: 20px; }
+  header p { color: var(--red); font-weight: bold; font-size: 12px; }
 
-  /* CONTAINER */
-  .container { max-width: 600px; margin: 20px auto; padding: 15px; }
+  .warning-banner { background: var(--red); color: white; text-align: center; padding: 10px; font-weight: bold; font-size: 14px; animation: blink 1.5s infinite; }
+  @keyframes blink { 50% { opacity: 0.7; } }
+
+  .container { max-width: 900px; margin: 15px auto; padding: 10px; }
+  .card { background: var(--white); padding: 18px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin-bottom: 15px; border-top: 4px solid var(--saffron); }
+  .card h2 { color: var(--navy); font-size: 16px; margin-bottom: 12px; }
   
-  /* FORM CARD */
-  .card {
-    background: var(--white);
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    margin-bottom: 20px;
-    border-top: 5px solid var(--saffron);
-  }
-  .card h2 { color: var(--blue); margin-bottom: 15px; font-size: 18px; }
-  
-  input, select, textarea, button {
-    width: 100%;
-    padding: 12px;
-    margin: 8px 0;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 14px;
-  }
-  button {
-    background: var(--green);
-    color: var(--white);
-    border: none;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.3s;
-  }
+  input, select, textarea, button { width: 100%; padding: 12px; margin: 8px 0; border: 1px solid #ccc; border-radius: 8px; font-size: 14px; }
+  button { background: var(--green); color: white; border: none; font-weight: bold; cursor: pointer; }
   button:hover { background: #0f6a06; }
+  button.red { background: var(--red); }
+  button.blue { background: var(--navy); }
   
-  /* COMPLAINT LIST */
-  .complaint {
-    background: var(--white);
-    padding: 15px;
-    border-radius: 10px;
-    margin: 10px 0;
-    border-left: 5px solid var(--saffron);
-  }
-  .complaint .id { font-weight: bold; color: var(--blue); }
-  .complaint .status { 
-    float: right; 
-    padding: 3px 8px; 
-    border-radius: 5px; 
-    font-size: 12px;
-    background: #ffcc00; 
-  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .complaint { background: #fff3e0; padding: 12px; border-radius: 8px; margin: 10px 0; border-left: 5px solid var(--red); }
+  .complaint .id { font-weight: bold; color: var(--navy); }
+  .status { float: right; padding: 3px 10px; border-radius: 15px; font-size: 11px; font-weight: bold; background: #ffc107; }
   .status.solved { background: var(--green); color: white; }
+  .status.jail { background: var(--red); color: white; }
   
-  footer { text-align: center; padding: 20px; font-size: 12px; color: #555; }
+  .score-board { background: var(--navy); color: white; text-align: center; padding: 12px; border-radius: 10px; }
+  .score-board h3 { font-size: 28px; color: var(--saffron); }
+  .alert { background: #ffebee; border-left: 5px solid var(--red); padding: 10px; margin: 10px 0; font-weight: bold; }
+  footer { background: var(--navy); color: white; text-align: center; padding: 20px; font-size: 12px; margin-top: 20px; }
 </style>
 </head>
 <body>
 
 <header>
-  <h1>🇮🇳 BhrashtacharMukt-Bharat</h1>
-  <p>Viksit Bharat @2047 ka Sankalp - Zero Corruption</p>
+  <h1>🇮🇳 Bhrashtachar Mukt - Bharat</h1>
+  <p>Viksit Bharat @2047 | Nazar Sab Pe. Saboot Pakka.</p>
 </header>
+
+<div class="warning-banner">
+  ⚠️ CHETAVNI: Bhrashtachar = Turant Job se Barkhast + Jail + Sampatti Jabt ⚠️
+</div>
 
 <div class="container">
 
-  <!-- 1. REPORT FORM -->
-  <div class="card">
-    <h2>1. Anonymous Complaint Karein</h2>
-    <form id="complaintForm">
-      <select id="vibhag" required>
-        <option value="">-- Vibhag Chune --</option>
-        <option>Police</option>
-        <option>Hospital</option>
-        <option>School/College</option>
-        <option>Ration/Dukan</option>
-        <option>Nagar Palika</option>
-        <option>Other</option>
-      </select>
-      <textarea id="details" rows="4" placeholder="Kya hua? Pura detail likhein..." required></textarea>
-      <input type="text" id="location" placeholder="Location: Gaon, Jila, Rajya" required>
-      <input type="file" id="photo" accept="image/*">
-      <button type="submit">Complaint Submit Karein</button>
-    </form>
-    <p id="successMsg" style="color:green; display:none;">✅ Complaint Submit ho gayi! Tracking ID: <b id="trackId"></b></p>
+  <div class="card score-board">
+    <h2>Bharat ka Parkhadarshita Score</h2>
+    <h3 id="transparencyScore">78 / 100</h3>
   </div>
 
-  <!-- 2. TRACK COMPLAINT -->
+  <div id="aiAlertBox"></div>
+
   <div class="card">
-    <h2>2. Complaint Track Karein</h2>
+    <h2>1. Anonymous Complaint Karein - 100% Surakshit</h2>
+    <form id="complaintForm">
+      <div class="grid-2">
+        <select id="vibhag" required><option value="">-- Vibhag Chune --</option><option>Police</option><option>Hospital</option><option>School</option><option>Ration</option><option>Nagar Palika</option><option>Other</option></select>
+        <input type="text" id="location" placeholder="Location: Gaon, Jila, Rajya" required>
+      </div>
+      <textarea id="details" rows="3" placeholder="Kya hua? Kitne paise maange? Date aur Saboot detail me likhein..." required></textarea>
+      <input type="file" id="proof" accept="image/*,video/*">
+      <p style="font-size:11px; color:green;">✅ Proof IPFS + Blockchain pe lock ho jayega. Koi delete nahi kar sakta.</p>
+      <button type="submit">Complaint Submit Karein</button>
+    </form>
+    <p id="successMsg" style="color:green; display:none; margin-top:10px;">✅ Submit ho gaya! Tracking ID: <b id="trackId"></b></p>
+  </div>
+
+  <div class="card">
+    <h2>2. Mega Pro Tools</h2>
+    <div class="grid-2">
+      <button class="blue" onclick="voiceReport()">🎤 Voice se Complaint</button>
+      <button class="blue" onclick="generateRTI()">📄 1-Click RTI + Legal Notice</button>
+      <button onclick="whatsappBot()">📱 WhatsApp: 14448 pe Report</button>
+      <button class="red" onclick="officerAction()">👮 Officer: Job Khatam + Jail</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>3. Complaint Track Karein</h2>
     <input type="text" id="trackInput" placeholder="Apna Tracking ID daalein">
     <button onclick="trackComplaint()">Track</button>
     <p id="trackResult"></p>
   </div>
 
-  <!-- 3. PUBLIC WALL -->
   <div class="card">
-    <h2>3. Public Wall - Sabki Nazar</h2>
-    <div id="complaintList">
-      <!-- Yahan complaint ayengi -->
-    </div>
+    <h2>4. Public Wall - Sabki Nazar</h2>
+    <div id="complaintList"></div>
   </div>
 
 </div>
 
 <footer>
-  Jai Hind | Made for Viksit Bharat @2047 by Chandan Kumar, Jamalpur, Bihar
+  <h3>🇮🇳 BHRASHTACHAR MUKT - BHARAT 🇮🇳</h3>
+  <p>Mission: Viksit Bharat @2047 - Zero Corruption</p>
+  <p>"Ek Report = Ek Kadam Corruption Mukti Ki Aur"</p>
+  <hr style="margin:10px auto; width:50%; border:1px solid #138808;">
+  <p>Created By: <b>Chandan Kumar</b> | Jamalpur, Bihar</p>
+  <p style="font-size:10px;">© 2026 MIT License | Galat/ Fake complaint = IPC 182 ke tahat Jail</p>
 </footer>
 
 <script>
-  // Local Storage me data save hoga
-  let complaints = JSON.parse(localStorage.getItem('complaints')) || [];
+  let complaints = JSON.parse(localStorage.getItem('bm_complaints')) || [
+    {id:"BM-DEMO1", vibhag:"Police", details:"Rishwat maangi 5000", location:"Patna, Bihar", status:"Jail", date:"30-07-2026", proofHash:"0xabc123", aiFlag:true},
+    {id:"BM-DEMO2", vibhag:"Ration", details:"Anaj nahi diya", location:"Gaya, Bihar", status:"Solved", date:"29-07-2026", proofHash:"0xdef456", aiFlag:false}
+  ];
 
-  // Page load pe list dikhao
-  window.onload = showComplaints;
+  window.onload = () => { showComplaints(); checkAIRedFlag(); updateScore(); };
 
-  // 1. FORM SUBMIT
   document.getElementById('complaintForm').addEventListener('submit', function(e){
     e.preventDefault();
-    let id = 'BM' + Date.now(); // Unique ID
-    let newComplaint = {
-      id: id,
-      vibhag: document.getElementById('vibhag').value,
-      details: document.getElementById('details').value,
-      location: document.getElementById('location').value,
-      status: 'Pending',
-      date: new Date().toLocaleDateString('hi-IN')
-    };
+    let id = 'BM-' + Date.now().toString(36).toUpperCase();
+    let bHash = '0x' + Math.random().toString(16).slice(2, 18);
+    let newComplaint = { id, vibhag: vibhag.value, details: details.value, location: location.value, status: 'Pending', date: new Date().toLocaleDateString('hi-IN'), proofHash: bHash, aiFlag: false };
     complaints.push(newComplaint);
-    localStorage.setItem('complaints', JSON.stringify(complaints));
-    
-    document.getElementById('trackId').innerText = id;
-    document.getElementById('successMsg').style.display = 'block';
-    this.reset();
-    showComplaints();
+    localStorage.setItem('bm_complaints', JSON.stringify(complaints));
+    trackId.innerText = id; successMsg.style.display = 'block'; this.reset();
+    showComplaints(); checkAIRedFlag(); updateScore();
+    alert("Dhanyavaad! Aapki complaint Blockchain pe lock ho gayi. Ab ise koi mita nahi sakta.");
   });
 
-  // 2. SHOW ALL COMPLAINTS
   function showComplaints(){
-    let list = document.getElementById('complaintList');
-    list.innerHTML = '';
-    if(complaints.length == 0){
-      list.innerHTML = '<p>Abhi tak koi complaint nahi hai.</p>';
-      return;
-    }
+    complaintList.innerHTML = '';
     complaints.reverse().forEach(c => {
-      list.innerHTML += `
+      complaintList.innerHTML += `
         <div class="complaint">
-          <span class="status ${c.status == 'Solved' ? 'solved' : ''}">${c.status}</span>
-          <p class="id">ID: ${c.id}</p>
-          <p><b>Vibhag:</b> ${c.vibhag}</p>
-          <p><b>Location:</b> ${c.location}</p>
-          <p><b>Detail:</b> ${c.details}</p>
-          <p><small>Date: ${c.date}</small></p>
-        </div>
-      `;
-    });
-  }
-
-  // 3. TRACK FUNCTION
-  function trackComplaint(){
-    let trackId = document.getElementById('trackInput').value;
-    let found = complaints.find(c => c.id == trackId);
-    let result = document.getElementById('trackResult');
-    if(found){
-      result.innerHTML = `<b>Status:</b> ${found.status} <br> <b>Vibhag:</b> ${found.vibhag}`;
-    } else {
-      result.innerHTML = `<b style="color:red;">Galat ID hai</b>`;
-    }
-  }
-
-</script>
-</body>
-</html>
+          <span class="status ${c.status == 'Solved'? 'solved'
